@@ -26,6 +26,27 @@ export class Jot {
         `
   }
 
+  get activeJotTemplate() {
+    return `
+      <h3 class="p-4" style="color: black;">JOT NAME</h3>
+      <div class="row d-flex align-items-center justify-content-around">
+        <div class="col-4 pl-4">
+          <p>Created: </p>
+          <p>Last Updated: </p>
+        </div>
+        <div class="col-2"></div>
+        <div class="col-4 text-end">
+          <button class="btn btn-success text-center" type="submit">Save Jot <span
+          class="mdi mdi-download-box"></span></button>
+          <button class="btn btn-danger text-center">Delete Jot <span class="mdi mdi-trash-can"></span></button>
+        </div>
+      </div>
+      <form onsubmit="" class="form-control p-4 textInput">
+        <textarea name="body" id="jotBody" class="w-100 form-control" style="border: 3px solid black;"
+        rows="16"></textarea>
+      </form>
+    `
+  }
   get shortCreatedTime() {
     return this.dateCreated.toLocaleDateString('en-us', { year: '2-digit', day: '2-digit', month: '2-digit', })
   }

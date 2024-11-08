@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
   <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
@@ -16,7 +20,7 @@
   <title>Jot Notes</title>
 </head>
 
-<body class="textColor">
+<body class="textColor host-grotesk-font">
   <!-- SECTION Header-->
   <header class="text-start">
     <div class="p-2 mt-1 mx-4 ">
@@ -37,7 +41,7 @@
             <div class="secondaryBrown">
               <input type="color" class="form-control color-picker" name="color" id="jotColor" required>
             </div>
-            <input id="jotBody" class="form-control text-box" type="text" name="title" placeholder="Jot Title..."
+            <input id="jotTitle" class="form-control text-box" type="text" name="title" placeholder="Jot Title..."
               minlength="3" maxlength="15" required>
             <button class="btn buttonBg create-button" type="submit"><span class="mdi mdi-plus"></span></button>
           </form>
@@ -49,12 +53,14 @@
       </div>
       <div class="col-lg-9 col-md-7 col-12 pb-4 pl-3">
         <div id="activeJot" class="rounded secondaryBrown h-100">
-          <!-- Centering wrapper -->
+          <!-- SECTION this is where active template will print -->
           <div class="center-content">
             <h3 class="mb-3 fw-bold">Create Or Select A Jot To Begin Jotting!</h3>
             <img class="imageFit" src="assets/img/noteImage.png" alt="">
           </div>
         </div>
+      </div>
+      </div>
       </div>
     </section>
   </main>

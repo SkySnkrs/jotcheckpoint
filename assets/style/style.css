@@ -1,0 +1,56 @@
+/* BASIC STYLES HERE */
+header {
+    background-color: #133E87;
+    color: #CBDCEB;
+}
+
+body {
+    background-color: #133E87;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.secondaryBlue {
+    background-color: #608BC1;
+}
+
+.lightBlue {
+    background-color: #CBDCEB;
+}
+
+
+.buttonBg {
+    background-color: #133E87;
+    /* border: 2px solid #CBDCEB; */
+    height: 40px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.color-picker {
+    width: 40px;
+    height: 40px;
+    border: #133E87;
+    /* border-radius: 50%; */
+    padding: 0;
+    margin: 0;
+}
+
+#jotBody {
+    background-color: #133E87;
+    border: #133E87;
+    height: 40px;
+}
+
+#noteInput {
+    position: relative;
+    overflow-y: auto
+}

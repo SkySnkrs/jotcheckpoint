@@ -9,6 +9,7 @@ class ObservableAppState extends EventEmitter {
     new Jot({ title: 'Week 16', body: 'Hello my name is tristan and this is my initial jot to make sure that everything is fitting correctly.' })
   ]
 
+  activeJots = null
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())

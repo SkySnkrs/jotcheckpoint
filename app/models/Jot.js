@@ -12,7 +12,7 @@ export class Jot {
 
   get jotBodyTemplate() {
     return `
-        <div class="row mt-4 mx-2 clickable-element jotBorder" type="button" style="border-color: ${this.color};">
+        <div onclick="app.JotController.selectActiveJot('${this.id}')" class="row mt-4 mx-2 clickable-element jotBorder" type="button" style="border-color: ${this.color};">
             <div class="col-7 mb-2 text-start fw-bold">
               <span>${this.title}</span>
             </div>
@@ -28,11 +28,11 @@ export class Jot {
 
   get activeJotTemplate() {
     return `
-      <h3 class="p-4" style="color: black;">JOT NAME</h3>
+      <h3 class="p-4" style="color: ${this.color};">${this.title}</h3>
       <div class="row d-flex align-items-center justify-content-around">
         <div class="col-4 pl-4">
-          <p>Created: </p>
-          <p>Last Updated: </p>
+          <p>Created: ${this.shortCreatedTime}</p>
+          <p>Last Updated: ${this.UpdatedAt}</p>
         </div>
         <div class="col-2"></div>
         <div class="col-4 text-end">
@@ -41,13 +41,17 @@ export class Jot {
           <button class="btn btn-danger text-center">Delete Jot <span class="mdi mdi-trash-can"></span></button>
         </div>
       </div>
-      <form onsubmit="" class="form-control p-4 textInput">
-        <textarea name="body" id="jotBody" class="w-100 form-control" style="border: 3px solid black;"
-        rows="16"></textarea>
+      <form onsubmit="app.JotController.saveActiveJots()" class="form-control p-4 textInput">
+        <textarea name="body" id="jotBody" class="w-100 form-control" style="border: 3px solid ${this.color};"
+        rows="16">${this.body}</textarea>
       </form>
     `
   }
   get shortCreatedTime() {
     return this.dateCreated.toLocaleDateString('en-us', { year: '2-digit', day: '2-digit', month: '2-digit', })
+  }
+
+  get UpdatedAt() {
+    return this.updatedDate.toLocaleDateString('en-us', { hour: '2-digit', minute: '2-digit', year: '2-digit', day: '2-digit', month: '2-digit' })
   }
 }

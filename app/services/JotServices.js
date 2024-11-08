@@ -4,23 +4,32 @@ import { loadState, saveState } from "../utils/Store.js"
 
 
 class JotServices {
+
+    deleteJot(jotId) {
+        const index = AppState.jots.findIndex(Jot => jotId == Jot.id);
+        if (index !== -1) {
+            AppState.jots.splice(index, 1);
+            AppState.emit('jots')
+            saveState('jots', AppState.jots)
+        }
+
+    }
     selectActiveJot(jotId) {
-        console.log('service', jotId);
         const selectedJot = AppState.jots.find(Jot => jotId == Jot.id)
-        console.log(selectedJot);
         AppState.activeJots = selectedJot
     }
 
     saveActiveJot(newText) {
         const jot = AppState.activeJots
-        jot.updatedAt = new Date()
-        AppState.emit('activeJot')
+        jot.body = (newText)
+        jot.updatedDate = new Date()
+        AppState.emit('jots')
+        AppState.emit('activeJots')
         this.saveJots()
     }
 
     createJot(formData) {
         AppState.jots.push(new Jot(formData))
-        console.log(AppState.jots);
         this.saveJots()
     }
 

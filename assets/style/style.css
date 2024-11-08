@@ -85,10 +85,6 @@ label {
     cursor: pointer;
 }
 
-.formOverflow {
-    overflow-y: hidden
-}
-
 .textInput {
     border: none;
     background-color: #CADCFC;
@@ -105,7 +101,8 @@ label {
 }
 
 .jotBorder {
-    border-left: 5px solid;
+    border-left: 3px solid;
+
 }
 
 .formOverflow {

@@ -28,6 +28,7 @@ export class Jot {
 
   get activeJotTemplate() {
     return `
+    <form onsubmit="app.JotController.saveActiveJots()">
       <h3 class="p-4" style="color: ${this.color};">${this.title}</h3>
       <div class="row d-flex align-items-center justify-content-around">
         <div class="col-4 pl-4">
@@ -38,13 +39,23 @@ export class Jot {
         <div class="col-4 text-end">
           <button class="btn btn-success text-center" type="submit">Save Jot <span
           class="mdi mdi-download-box"></span></button>
-          <button class="btn btn-danger text-center">Delete Jot <span class="mdi mdi-trash-can"></span></button>
+          <button onclick="app.JotController.deleteJot('${this.id}')" class="btn btn-danger text-center" type="button">Delete Jot <span class="mdi mdi-trash-can"></span></button>
         </div>
       </div>
-      <form onsubmit="app.JotController.saveActiveJots()" class="form-control p-4 textInput">
-        <textarea name="body" id="jotBody" class="w-100 form-control" style="border: 3px solid ${this.color};"
-        rows="16">${this.body}</textarea>
-      </form>
+      <div class="p-4">
+        <textarea name="body" id="jotBody" class="w-100 textInput form-control" style="border: 3px solid ${this.color};"
+        rows="14">${this.body}</textarea>
+      </div>
+    </form>
+    `
+  }
+
+  get originalActivePage() {
+    return `
+    <div class="center-content">
+      <h3 class="mb-3 fw-bold">Create Or Select A Jot To Begin Jotting!</h3>
+      <img class="imageFit" src="assets/img/noteImage.png" alt="">
+    </div>
     `
   }
   get shortCreatedTime() {

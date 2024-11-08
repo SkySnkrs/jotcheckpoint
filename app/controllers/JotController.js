@@ -34,6 +34,15 @@ export class JotController {
         jotServices.selectActiveJot(jotId)
     }
 
+    deleteJot(jotId) {
+        confirm("Are you sure you want to delete this jot?");
+        jotServices.deleteJot(jotId)
+        console.log('deleted', jotId)
+        const activeJotElem = document.getElementById('activeJot')
+        activeJotElem.innerHTML = ''
+        activeJotElem.innerHTML = AppState.activeJots.originalActivePage
+    }
+
     saveActiveJots() {
         event.preventDefault()
         console.log('Saving active Jot', AppState.activeJots);
@@ -43,7 +52,6 @@ export class JotController {
         console.log(newText);
         jotServices.saveActiveJot(newText)
     }
-
 
     createJot() {
         console.log('Creating Case File');

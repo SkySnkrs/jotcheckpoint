@@ -1,30 +1,32 @@
 import { generateId } from "../utils/GenerateId.js"
 
 export class Jot {
-    constructor(data) {
-        this.title = data.title
-        this.id = data.id || generateId()
-        this.body = data.body
-        this.color = data.color
-        this.dateCreated = data.dateCreated == undefined ? new Date() : new Date(data.dateCreated)
-        this.updatedDate = data.updatedDate == undefined ? new Date() : new Date(data.updatedDate)
-    }
+  constructor(data) {
+    this.title = data.title
+    this.id = data.id || generateId()
+    this.body = data.body || ''
+    this.color = data.color || '#133E87'
+    this.dateCreated = data.dateCreated == undefined ? new Date() : new Date(data.dateCreated)
+    this.updatedDate = data.updatedDate == undefined ? new Date() : new Date(data.updatedDate)
+  }
 
-    get jotBodyTemplate() {
-        return `
-        <div class="row mt-4 mx-2 clickable-element jotBorder" type="button">
-            <div class="col-6 mb-2 text-start fw-bold">
-              <span>Note Title</span>
+  get jotBodyTemplate() {
+    return `
+        <div class="row mt-4 mx-2 clickable-element jotBorder" type="button" style="border-color: ${this.color};">
+            <div class="col-7 mb-2 text-start fw-bold">
+              <span>${this.title}</span>
             </div>
-            <div class="col-6 mb-2 text-end fw-bold">
-              <span>Date Created</span>
+            <div class="col-5 mb-2 text-end fw-bold">
+              <span>${this.shortCreatedTime}</span>
             </div>
             <div class="noteBody">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, itaque porro reiciendis inventore
-                aliquam nemo amet earum sint, molestias modi delectus nisi non possimus temporibus, alias ducimus quidem
-                quos eveniet.</p>
+              <p>${this.body}</p>
             </div>
         </div>
         `
-    }
+  }
+
+  get shortCreatedTime() {
+    return this.dateCreated.toLocaleDateString('en-us', { year: '2-digit', day: '2-digit', month: '2-digit', })
+  }
 }

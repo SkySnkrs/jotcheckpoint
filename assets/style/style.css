@@ -1,11 +1,11 @@
 /* BASIC STYLES HERE */
 header {
-    background-color: #133E87;
-    color: #CBDCEB;
+    background-color: #89ABE3;
+    color: #ffeddb;
 }
 
 body {
-    background-color: #133E87;
+    background-color: #89ABE3
 }
 
 label {
@@ -13,21 +13,21 @@ label {
     font-size: 1rem;
 }
 
-.secondaryBlue {
-    background-color: #608BC1;
+.secondaryBrown {
+    background-color: #CADCFC;
 }
 
 .lightBlue {
-    background-color: #CBDCEB;
+    background-color: #CADCFC;
 }
 
-.textLightBlue {
-    color: #CBDCEB;
 
+.textColor {
+    color: #4B0082;
 }
 
 .buttonBg {
-    background-color: #133E87;
+    background-color: #FFFFFF;
     /* border: 2px solid #CBDCEB; */
     height: 40px;
 }
@@ -38,11 +38,26 @@ label {
     gap: 8px;
 }
 
+.imageFit {
+    object-position: center;
+    height: 40dvh;
+    width: 30dvw;
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
 
 .color-picker {
     width: 40px;
     height: 40px;
-    border: #133E87;
+    border: #FFFFFF;
     /* border-radius: 50%; */
     padding: 0;
     margin: 0;
@@ -68,8 +83,8 @@ label {
 }
 
 #jotBody {
-    background-color: #133E87;
-    border: #133E87;
+    background-color: #FFFFFF;
+    border: #FFFFFF;
     height: 40px;
 }
 
@@ -78,7 +93,7 @@ label {
 }
 
 .jotBorder {
-    border-left: 5px solid #133E87;
+    border-left: 5px solid;
 }
 
 .formOverflow {

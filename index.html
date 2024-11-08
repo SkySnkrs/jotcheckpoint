@@ -16,48 +16,45 @@
   <title>Jot Notes</title>
 </head>
 
-<body class="">
+<body class="textColor">
   <!-- SECTION Header-->
   <header class="text-start">
     <div class="p-2 mt-1 mx-4 ">
-      <h5>Jot.Notes</h5>
+      <h5 class="textColor">Jot.Notes</h5>
     </div>
   </header>
 
   <!-- SECTION Main-->
   <main class=" container-fluid d-flex">
-    <section class="row mx-3 w-100">
-      <div id="jotInput" class="mb-4 col-lg-3 col-md-4 rounded secondaryBlue shadow-lg ">
+    <section class="row mx-3 w-100 justify-content-between">
+      <div id="jotInput" class="mb-4 col-lg-3 col-md-4 rounded secondaryBrown">
         <div class="text-end align-self-center pt-3 mx-3">
           <span class="mdi mdi-note-multiple"></span> <b>-</b>&nbsp;<span id="totalNotes">0</span>
         </div>
         <div class="p-3">
           <label class="mb-3 mx-1">Add A Jot</label>
-          <form onsubmit="" class="d-flex align-items-center gap-2">
-            <div class="secondaryBlue">
-              <input type="color" class="form-control color-picker" name="color" id="jotColor">
+          <form onsubmit="app.JotController.createJot()" class="d-flex align-items-center gap-2">
+            <div class="secondaryBrown">
+              <input type="color" class="form-control color-picker" name="color" id="jotColor" required>
             </div>
-            <input id="jotBody" class="form-control text-box" type="text" placeholder="Type here...">
+            <input id="jotBody" class="form-control text-box" type="text" name="title" placeholder="Jot Title..."
+              minlength="3" maxlength="15" required>
             <button class="btn buttonBg create-button" type="submit"><span class="mdi mdi-plus"></span></button>
           </form>
         </div>
         <section id="jotNotes" class="formOverflow mx-2 mt-2 position-relative">
-          <div class="row mt-4 mx-2 clickable-element jotBorder" type="button">
-            <div class="col-6 mb-2 text-start fw-bold">
-              <span>Note Title</span>
-            </div>
-            <div class="col-6 mb-2 text-end fw-bold">
-              <span>Date Created</span>
-            </div>
-            <div class="noteBody">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, itaque porro reiciendis inventore
-                aliquam nemo amet earum sint, molestias modi delectus nisi non possimus temporibus, alias ducimus quidem
-                quos eveniet.</p>
-            </div>
-          </div>
+          <!-- SECTION this is where jots are drawn -->
         </section>
         <div class="scroll-arrow text-center fs-2 mt-2">&#x2193;</div>
       </div>
+      <div class="col-lg-9 col-md-7 col-12 pb-4 pl-3">
+        <div id="activeJot" class="rounded secondaryBrown h-100">
+          <!-- Centering wrapper -->
+          <div class="center-content">
+            <h3 class="mb-3 fw-bold">Create Or Select A Jot To Begin Jotting!</h3>
+            <img class="imageFit" src="assets/img/noteImage.png" alt="">
+          </div>
+        </div>
       </div>
     </section>
   </main>

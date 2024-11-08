@@ -27,7 +27,7 @@
   <!-- SECTION Main-->
   <main class=" container-fluid d-flex">
     <section class="row mx-3 w-100">
-      <div id="noteInput" class="mb-4 col-lg-3 col-md-4 rounded secondaryBlue shadow-lg ">
+      <div id="jotInput" class="mb-4 col-lg-3 col-md-4 rounded secondaryBlue shadow-lg ">
         <div class="text-end align-self-center pt-3 mx-3">
           <span class="mdi mdi-note-multiple"></span> <b>-</b>&nbsp;<span id="totalNotes">0</span>
         </div>
@@ -41,6 +41,23 @@
             <button class="btn buttonBg create-button" type="submit"><span class="mdi mdi-plus"></span></button>
           </form>
         </div>
+        <section id="jotNotes" class="formOverflow mx-2 mt-2 position-relative">
+          <div class="row mt-4 mx-2 clickable-element jotBorder" type="button">
+            <div class="col-6 mb-2 text-start fw-bold">
+              <span>Note Title</span>
+            </div>
+            <div class="col-6 mb-2 text-end fw-bold">
+              <span>Date Created</span>
+            </div>
+            <div class="noteBody">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, itaque porro reiciendis inventore
+                aliquam nemo amet earum sint, molestias modi delectus nisi non possimus temporibus, alias ducimus quidem
+                quos eveniet.</p>
+            </div>
+          </div>
+        </section>
+        <div class="scroll-arrow text-center fs-2 mt-2">&#x2193;</div>
+      </div>
       </div>
     </section>
   </main>

@@ -31,11 +31,11 @@ export class Jot {
     <form onsubmit="app.JotController.saveActiveJots()">
       <h3 class="p-4" style="color: ${this.color};">${this.title}</h3>
       <div class="row d-flex align-items-center justify-content-around">
-        <div class="col-4 pl-4">
+        <div class="col-6 pl-4">
           <p>Created: ${this.shortCreatedTime}</p>
           <p>Last Updated: ${this.UpdatedAt}</p>
         </div>
-        <div class="col-2"></div>
+        
         <div class="col-4 text-end">
           <button class="btn btn-success text-center" type="submit">Save Jot <span
           class="mdi mdi-download-box"></span></button>

@@ -43,6 +43,7 @@
             </div>
             <input id="jotTitle" class="form-control text-box" type="text" name="title" placeholder="Jot Title..."
               minlength="3" maxlength="15" required>
+            <label for="jotTitle" id="jotTitleCount">0/15</label>
             <button class="btn buttonBg create-button" type="submit"><span class="mdi mdi-plus"></span></button>
           </form>
         </div>
@@ -78,6 +79,22 @@
     integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
 
   <script src="app/App.js" type="module"></script>
+
+  <script>
+    const jotTitleInput = document.getElementById("jotTitle");
+    const countDisplay = document.getElementById("jotTitleCount");
+
+    jotTitleInput.addEventListener("input", () => {
+      const currentLength = jotTitleInput.value.length;
+      countDisplay.textContent = `${currentLength}/15`;
+
+      if (currentLength >= 15) {
+        countDisplay.style.color = "red";
+      } else {
+        countDisplay.style.color = "black";
+      }
+    });
+  </script>
 </body>
 
 </html>

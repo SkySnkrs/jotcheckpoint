@@ -68,4 +68,6 @@ export class JotController {
         this.drawJot
         this.drawActiveJot
     }
+
+
 }

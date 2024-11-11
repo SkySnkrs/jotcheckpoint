@@ -35,12 +35,14 @@ export class JotController {
     }
 
     deleteJot(jotId) {
-        confirm("Are you sure you want to delete this jot?");
-        jotServices.deleteJot(jotId)
-        console.log('deleted', jotId)
-        const activeJotElem = document.getElementById('activeJot')
-        activeJotElem.innerHTML = ''
-        activeJotElem.innerHTML = AppState.activeJots.originalActivePage
+        let yes = confirm("Are you sure you want to delete this jot?");
+        if (yes) {
+            jotServices.deleteJot(jotId)
+            console.log('deleted', jotId)
+            const activeJotElem = document.getElementById('activeJot')
+            activeJotElem.innerHTML = ''
+            activeJotElem.innerHTML = AppState.activeJots.originalActivePage
+        }
     }
 
     saveActiveJots() {
